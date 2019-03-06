@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>News Jsoup</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img th:attr="src=${onetNews.getImgURL()}" class="card-img-top" alt="Onet.pl">
+                <div class="card-body">
+                    <h5 class="card-title">Onet.pl</h5>
+                    <p th:text="${onetNews.getTitle()}" class="card-text"></p>
+                    <a th:href="${onetNews.getMoreURL()}" class="btn btn-primary" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img th:attr="src=${news.getImgURL()}" class="card-img-top" alt="TVN24">
+                <div class="card-body">
+                    <h5 class="card-title">TVN 24</h5>
+                    <p th:text="${news.getTitle()}" class="card-text"></p>
+                    <a th:href="${news.getMoreURL()}" class="btn btn-primary" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img th:attr="src=${wpNews.getImgURL()}" class="card-img-top"
+                     alt="wp.pl - have image in CSS background, Jsoup can't parse css.file">
+                <div class="card-body">
+                    <h5 class="card-title">wp.pl</h5>
+                    <p th:text="${wpNews.getTitle()}" class="card-text"></p>
+                    <a th:href="${wpNews.getMoreURL()}" class="btn btn-primary" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ></div>
+
+</body>
+</html>
